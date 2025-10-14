@@ -5,8 +5,8 @@ fun main() {
     val feedbackOfOrders = "It's cool Order"
     var numberOfPersonnels = 2000
 
-    println(numberOfOrders)
-    println(feedbackOfOrders)
+    //println(numberOfOrders)
+
 
     --numberOfPersonnels
     println(numberOfPersonnels)
