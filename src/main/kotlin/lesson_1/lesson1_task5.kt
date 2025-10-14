@@ -1,16 +1,16 @@
 package org.example.lesson_1
 
-const val oneMinutesInSeconds : Byte = 60
-const val oneHoursInSeconds : Short = 3600
+const val ONE_MINUTES_IN_SECONDS = 60
+const val ONE_HOURS_IN_SECONDS = 3600
 
 fun main() {
 
-    val seconds : Short = 6480
+    val zero = 0
+    val seconds = 6480
+    val hours = seconds / ONE_HOURS_IN_SECONDS
+    var remainingSeconds = seconds - hours * ONE_HOURS_IN_SECONDS
+    val remainingMinutes = remainingSeconds / ONE_MINUTES_IN_SECONDS
+    remainingSeconds -= remainingMinutes * ONE_MINUTES_IN_SECONDS
 
-    val hours : Byte = (seconds / oneHoursInSeconds).toByte()
-    var remainingSeconds : Short = (seconds - hours*oneHoursInSeconds).toShort()
-    val remainingMinutes : Byte = (remainingSeconds / oneMinutesInSeconds).toByte()
-    remainingSeconds = (remainingSeconds - remainingMinutes * oneMinutesInSeconds).toShort()
-
-    println("0$hours:$remainingMinutes:0$remainingSeconds")
+    println("%d$hours:$remainingMinutes:%d$remainingSeconds".format(zero, zero))
 }
