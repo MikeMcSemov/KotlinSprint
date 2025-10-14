@@ -11,6 +11,5 @@ fun main() {
     var remainingSeconds = seconds - hours * ONE_HOURS_IN_SECONDS
     val remainingMinutes = remainingSeconds / ONE_MINUTES_IN_SECONDS
     remainingSeconds -= remainingMinutes * ONE_MINUTES_IN_SECONDS
-
     println("%d$hours:$remainingMinutes:%d$remainingSeconds".format(zero, zero))
 }
