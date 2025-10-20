@@ -5,9 +5,9 @@ fun main() {
     var helloWord = "Hi, it's daytime"
     val namePerson = "Vasya"
 
-    println(helloWord + " " + namePerson)
+    println("$helloWord $namePerson")
 
     helloWord = "Hi, it's evening"
 
-    println(helloWord + " " + namePerson)
+    println("$helloWord $namePerson")
 }
