@@ -16,7 +16,7 @@ fun main() {
         if (userPassword == PASSWORD_USER_IN_BASE) {
             println("Пользователь \"$LOGIN_USER_IN_BASE\", вам разрешено входить на борт корабля \"Heart of Gold\".")
         } else {
-            println("Неправильный пароль")
+            println("Неправильный пароль. Попробуйте заново.")
         }
     } else {
         println("Такого пользователя нет. Необходимо зарегистрироваться")
