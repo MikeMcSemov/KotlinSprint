@@ -4,7 +4,7 @@ fun main() {
 
     val day = 5
 
-    val exercisesOfArmsAndAbs = if (day % 2 == 0) true else false
+    val exercisesOfArmsAndAbs = if (day % 2 == 0) false else true
 
     println(
         """
