@@ -22,11 +22,10 @@ fun main() {
     println("Благоприятность метеоусловий:")
     weatherIsGood = scanner.nextBoolean()
 
-    if (((damageToTheShip == true) && (numberOfCrew in 55..70) && (quantityOfProvisions > 50) && ((weatherIsGood == true) || (weatherIsGood == false))) ||
-        ((damageToTheShip == false) && (numberOfCrew == 70) && (quantityOfProvisions >= 50) && (weatherIsGood == true))) {
-        println("Научно-исследовательский корабль может приступить к долгосрочному плаванию")
-    } else {
-        println("Научно-исследовательский корабль НЕ может приступить к долгосрочному плаванию")
-    }
+    val result = if ((damageToTheShip && (numberOfCrew in 55..70) && (quantityOfProvisions > 50))
+        || (!damageToTheShip && (numberOfCrew == 70) && (quantityOfProvisions >= 50) && weatherIsGood))
+        "может" else "не может"
+
+    println("Научно-исследовательский корабль $result приступить к долгосрочному плаванию")
 
 }
