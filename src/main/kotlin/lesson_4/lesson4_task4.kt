@@ -2,11 +2,9 @@ package org.example.lesson_4
 
 fun main() {
 
-    var exercisesOfArmsAndAbs = true
     val day = 5
 
-    if (day % 2 == 0)
-        exercisesOfArmsAndAbs = !exercisesOfArmsAndAbs
+    val exercisesOfArmsAndAbs = if (day % 2 == 0) true else false
 
     println(
         """
@@ -16,5 +14,4 @@ fun main() {
         Упражнения для пресса: $exercisesOfArmsAndAbs
     """.trimIndent()
     )
-
 }
