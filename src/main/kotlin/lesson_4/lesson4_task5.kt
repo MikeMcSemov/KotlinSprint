@@ -1,6 +1,5 @@
 package org.example.lesson_4
 
-import java.util.Scanner
 
 fun main() {
 
@@ -8,19 +7,18 @@ fun main() {
     val numberOfCrew: Int
     val quantityOfProvisions: Int
     val weatherIsGood: Boolean
-    val scanner = Scanner(System.`in`)
 
     println("Наличие повреждений корпуса:")
-    damageToTheShip = scanner.nextBoolean()
+    damageToTheShip = readln().toBoolean()
 
     println("Текущий состав экипажа:")
-    numberOfCrew = scanner.nextInt()
+    numberOfCrew = readln().toInt()
 
     println("Количество ящиков с провизией на борту:")
-    quantityOfProvisions = scanner.nextInt()
+    quantityOfProvisions = readln().toInt()
 
     println("Благоприятность метеоусловий:")
-    weatherIsGood = scanner.nextBoolean()
+    weatherIsGood = readln().toBoolean()
 
     val result = if ((damageToTheShip && (numberOfCrew in 55..70) && (quantityOfProvisions > 50))
         || (!damageToTheShip && (numberOfCrew == 70) && (quantityOfProvisions >= 50) && weatherIsGood))
