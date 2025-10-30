@@ -1,5 +1,8 @@
 package org.example.lesson_4
 
+    const val NUMBER_OF_CREW_MIN = 55
+    const val NUMBER_OF_CREW_MAX = 70
+    const val QUANTITY_OF_PROVISIONS = 50
 
 fun main() {
 
@@ -20,8 +23,8 @@ fun main() {
     println("Благоприятность метеоусловий:")
     weatherIsGood = readln().toBoolean()
 
-    val result = if ((damageToTheShip && (numberOfCrew in 55..70) && (quantityOfProvisions > 50))
-        || (!damageToTheShip && (numberOfCrew == 70) && (quantityOfProvisions >= 50) && weatherIsGood))
+    val result = if ((damageToTheShip && (numberOfCrew in NUMBER_OF_CREW_MIN..NUMBER_OF_CREW_MAX) && (quantityOfProvisions > QUANTITY_OF_PROVISIONS))
+        || (!damageToTheShip && (numberOfCrew == NUMBER_OF_CREW_MAX) && (quantityOfProvisions >= QUANTITY_OF_PROVISIONS) && weatherIsGood))
         "может" else "не может"
 
     println("Научно-исследовательский корабль $result приступить к долгосрочному плаванию")
