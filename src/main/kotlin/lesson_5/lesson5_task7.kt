@@ -1,6 +1,6 @@
 package org.example.lesson_5
 
-    const val COEFFICIENT_TRAVEL_DISTANCE = 100
+const val COEFFICIENT_TRAVEL_DISTANCE = 100
 
 fun main() {
 
@@ -16,6 +16,11 @@ fun main() {
     val totalLitersOfFuel = (travelDistanceInKm * fuelConsumption) / COEFFICIENT_TRAVEL_DISTANCE
     val totalCostOfFuel = totalLitersOfFuel * pricePerLiter
 
-    println("Общее количество необходимого топлива: %.2f и итоговая стоимость поездки составляет: %.2f".format(totalLitersOfFuel, totalCostOfFuel))
+    println(
+        "Общее количество необходимого топлива: %.2f и итоговая стоимость поездки составляет: %.2f".format(
+            totalLitersOfFuel,
+            totalCostOfFuel
+        )
+    )
 
 }
