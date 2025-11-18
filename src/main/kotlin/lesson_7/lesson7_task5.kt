@@ -1,21 +1,21 @@
 package org.example.lesson_7
 
-
 fun main() {
 
     val listPassword: MutableList<Char> = mutableListOf()
-    val rangeCharSmall = 'a'..'z'
-    val rangeCharBig = 'A'..'Z'
-    val rangeDigit = '0'..'9'
+    val rangeSum = ('a'..'z') + ('A'..'Z') + ('0'..'9')
 
     println("Введите длину кода, минимальное количество 6:")
     val sizeCode = readln().toInt()
 
-    val rangeChar = listOf(rangeCharSmall.random(), rangeCharBig.random(), rangeDigit.random())
+    listPassword.add(('a'..'z').random())
+    listPassword.add(('A'..'Z').random())
+    listPassword.add(('0'..'9').random())
 
-    for (i in 1..sizeCode) {
-        listPassword.add(rangeChar.random())
+    for (i in 4..sizeCode) {
+        listPassword.add(rangeSum.random())
     }
 
+    listPassword.shuffle()
     println(listPassword.joinToString())
 }
