@@ -5,17 +5,15 @@ fun main() {
     val arrayOfIngredients = arrayOf("огурцы", "салат", "лук", "булочка", "кунжут")
 
     println("Введите ингредиент:")
-    val ingredientPrintUser = readln()
+    val userIngredient = readln()
 
     for (i in arrayOfIngredients) {
-        if (i == ingredientPrintUser) {
+        if (i == userIngredient) {
             println("Ингредиент $i в рецепте есть")
-            break
+            return
         }
     }
 
-    if (arrayOfIngredients.last() != ingredientPrintUser) {
-        println("Такого ингредиента в рецепте нет")
-    }
+    println("Такого ингредиента в рецепте нет")
 
 }
