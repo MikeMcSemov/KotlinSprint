@@ -5,13 +5,13 @@ fun main() {
     println("Количество планируемых ингредиентов:")
     val numberOfIngredients = readln().toInt()
 
-    val arrayIngridients = arrayOfNulls<String>(numberOfIngredients)
 
-    for (i in 0 until numberOfIngredients) {
+    val arrayIngridients = Array(numberOfIngredients) {""}
+
+    for (i in arrayIngridients.indices) {
 
         println("Введите ингредиент №${i + 1}")
-        val ingredientUser = readln()
-        arrayIngridients[i] = ingredientUser
+        arrayIngridients[i] = readln()
 
     }
 
