@@ -8,13 +8,11 @@ fun main() {
     println("Какой ингредиент хотите заменить:")
     val ingridientUserChange = readln()
 
-    if (ingridientUserChange in arrayOfIngredients) {
-        println("Какой ингредиент хотите добавить:")
-        val ingridientUserAdd = readln()
+    val indexIngridient = arrayOfIngredients.indexOf(ingridientUserChange)
 
-        val indexIngridient = arrayOfIngredients.indexOf(ingridientUserChange)
-        arrayOfIngredients[indexIngridient] = ingridientUserAdd
+    if (indexIngridient >= 0) {
+        println("Какой ингредиент хотите добавить:")
+        arrayOfIngredients[indexIngridient] = readln()
         println("Готово! Вы сохранили следующий список: ${arrayOfIngredients.joinToString()}")
-    } else
-        println("Такого ингредиента нет, повторите заново")
+    } else println("Такого ингредиента нет, повторите заново")
 }
