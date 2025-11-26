@@ -2,19 +2,16 @@ package org.example.lesson_9
 
 fun main() {
 
-    val mutableListIngridients = mutableListOf<String>()
+    val mutableSetIngridients = mutableSetOf<String>()
 
     println("Введите название 5 ингредиентов")
 
     for (i in 0 until 5) {
-        mutableListIngridients.add(readln())
+        mutableSetIngridients.add(readln())
     }
 
-    val mutableListIngridientSorted = mutableListIngridients.distinct().sorted()
+    val mutableListIngridientSorted = mutableSetIngridients.sorted()
 
-    println(
-        mutableListIngridientSorted.joinToString(", ")
-            .replaceFirst(mutableListIngridientSorted[0], mutableListIngridientSorted[0].uppercase())
-    )
+    println(mutableListIngridientSorted.joinToString(", ").replaceFirstChar { it.uppercase() })
 
 }
