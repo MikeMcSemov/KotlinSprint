@@ -1,11 +1,9 @@
 package org.example.lesson_10
 
-import kotlin.random.Random
-
 fun main() {
 
-    val userRollDice = rollDice()
-    val computerRollDice = rollDice()
+    val userRollDice = rollDiceNew()
+    val computerRollDice = rollDiceNew()
 
     println("У игрока выпало на кубиках: $userRollDice")
     println("У компьютера выпало на кубиках: $computerRollDice")
@@ -15,8 +13,10 @@ fun main() {
     else println("Победила дружба")
 }
 
-fun rollDice(): Int {
+fun rollDiceNew(): Int {
 
-    return Random.nextInt(1, 7)
+    val rangeDigit = 1..6
+
+    return rangeDigit.random()
 
 }
