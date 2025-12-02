@@ -1,7 +1,5 @@
 package org.example.lesson_10
 
-import kotlin.random.Random
-
 fun main() {
 
     println("Введите длину кода:")
@@ -12,14 +10,15 @@ fun main() {
 fun generationCode(leightCode: Int?) {
 
     val listCode = mutableListOf<String?>()
-    val charRangeInt = '!'..'/'
+    val charRange = '!'..'/'
+    val intRange = 0..9
 
     for (i in 0 until leightCode!!) {
 
         if (i % 2 == 0) {
-            listCode.add(Random.nextInt(9).toString())
+            listCode.add(intRange.random().toString())
         } else {
-            listCode.add(charRangeInt.random().toString())
+            listCode.add(charRange.random().toString())
         }
     }
 
