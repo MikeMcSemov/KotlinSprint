@@ -4,16 +4,16 @@ fun main() {
 
     var countWinnerRounds = 0
 
-    if (gameRound()) ++countWinnerRounds
+    if (gameRound(rollDice(), rollDice())) ++countWinnerRounds
 
     while (true) {
 
         println("Хотите бросить кости еще раз? Введите Да или Нет")
-        var nameCommand = readln()
+        val nameCommand = readln()
 
         when (nameCommand) {
             "Да" -> {
-                if (gameRound()) ++countWinnerRounds
+                if (gameRound(rollDice(), rollDice())) ++countWinnerRounds
             }
 
             "Нет" -> {
@@ -34,7 +34,7 @@ fun rollDice(): Int {
     return rangeDigit.random()
 }
 
-fun gameRound(userRollDice: Int? = rollDice(), computerRollDice: Int? = rollDice()): Boolean {
+fun gameRound(userRollDice: Int?, computerRollDice: Int?): Boolean {
 
     var numberOfBatches = false
 
