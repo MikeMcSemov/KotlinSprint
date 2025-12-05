@@ -34,17 +34,17 @@ fun rollDice(): Int {
     return rangeDigit.random()
 }
 
-fun gameRound(userRollDice: Int?, computerRollDice: Int?): Boolean {
+fun gameRound(userRollDice: Int, computerRollDice: Int): Boolean {
 
     var numberOfBatches = false
 
     println("У игрока выпало на кубиках: $userRollDice")
     println("У компьютера выпало на кубиках: $computerRollDice")
 
-    if (userRollDice!! > computerRollDice!!) {
+    if (userRollDice > computerRollDice) {
         println("Победило человечество")
         numberOfBatches = true
-    } else if (userRollDice!! == computerRollDice!!) println("Победила дружба")
+    } else if (userRollDice == computerRollDice) println("Победила дружба")
     else println("Победила машина")
 
     return numberOfBatches
