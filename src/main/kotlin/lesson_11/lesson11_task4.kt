@@ -3,12 +3,14 @@ package org.example.lesson_11
 class CategoryRecipe(   //сущность: Категория рецепта
         val nameCategory: String,   //имя категории: Бургеры, Десерты, Пицца, Рыба и т.д.
         val textCategory: String,   //текст у категории
+        val recipeList: List<Recipe>,   //список с рецептами
         val titleCategoryPage: String = "КАТЕГОРИИ",    //заголовок страницы
 )
 
 class Recipe(   //сущность рецепт
     val nameRecipe: String, //имя рецепта
     var isFavorite: Boolean = false,    //переменная, для добавления/удаления из избранного
+    val ingredientList: List<Ingredient>, //список ингредиентов
     val titleRecipePage: CategoryRecipe,    //заголовок страницы, берем из поля nameCategory класса CategoryRecipe
 )
 
