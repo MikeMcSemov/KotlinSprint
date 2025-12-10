@@ -11,7 +11,6 @@ class Recipe(   //сущность рецепт
     val nameRecipe: String, //имя рецепта
     var isFavorite: Boolean = false,    //переменная, для добавления/удаления из избранного
     val ingredientList: List<Ingredient>, //список ингредиентов
-    val titleRecipePage: CategoryRecipe,    //заголовок страницы, берем из поля nameCategory класса CategoryRecipe
 )
 
 class Ingredient(   //сущность ингредиент
@@ -19,5 +18,4 @@ class Ingredient(   //сущность ингредиент
     var numberServings: Int = 1,    //количество порций, по умолчанию считаем для 1
     var numberIngredients: Int, //количество ингредиентов, на скринах указаны целые числа
     val unitMeasurement: String,    //единица измерения ингредиента
-    val titleIngredientPage: Recipe,    //заголовок страницы, берем из поля nameRecipe класса Recipe
 )
