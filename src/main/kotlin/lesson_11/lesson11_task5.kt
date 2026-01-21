@@ -21,19 +21,19 @@ class Forum(
     var userId: Int = 0,
     var authorId: Int = 0,
     val message: String = "",
-    val mutableListUserForum: MutableList<UserBuilder> = mutableListOf(),
-    val mutableListMessageForum: MutableList<MessageBuilder> = mutableListOf(),
+    val mutableListUserForum: MutableList<User> = mutableListOf(),
+    val mutableListMessageForum: MutableList<Message> = mutableListOf(),
 ) {
 
-    fun createNewUser(userName: String) : UserBuilder {
-        mutableListUserForum.add(UserBuilder(userName = userName, userId = mutableListUserForum.size))
+    fun createNewUser(userName: String) : User {
+        mutableListUserForum.add(User(userName = userName, userId = mutableListUserForum.size))
         return mutableListUserForum[mutableListUserForum.lastIndex]
     }
 
     fun createNewMessage(userId: Int)  {
         if (userId in mutableListUserForum.indices) {
             println("Введите сообщение для ${mutableListUserForum[userId].userName}")
-            mutableListMessageForum.add(MessageBuilder(authorId = userId, readln()))
+            mutableListMessageForum.add(Message(authorId = userId, readln()))
         }
     }
 
@@ -42,7 +42,7 @@ class Forum(
         mutableListMessageForumFilter.forEach { println("Author: ${it.authorId} Message: ${it.message}") }
     }
 
-    data class UserBuilder(
+    data class User(
         var userName: String = "",
         var userId: Int = 0,
     ) {
@@ -50,7 +50,7 @@ class Forum(
         fun userId(userId: Int) = apply { this.userId = userId }
     }
 
-    data class MessageBuilder(
+    data class Message(
         var authorId: Int = 0,
         var message: String = "",
     ) {
