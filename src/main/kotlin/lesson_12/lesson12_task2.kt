@@ -1,6 +1,6 @@
 package org.example.lesson_12
 
-fun main(){
+fun main() {
     val weatherOneDayNew = WeatherOneDayNew(25, 15, true)
 
     weatherOneDayNew.printWeather()
@@ -12,7 +12,7 @@ class WeatherOneDayNew(
     val precipitationPerDay: Boolean,
 ) {
 
-    fun  printWeather() {
+    fun printWeather() {
         println("Температура днем: $temperatureDay, Температура ночью: $temperatureNight, Наличие осадков: $precipitationPerDay")
     }
 }
