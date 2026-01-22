@@ -16,21 +16,12 @@ fun main() {
     weatherOneDay2.printWeather()
 }
 
-
-class WeatherOneDay
-{
+class WeatherOneDay {
     var temperatureDay: Int = 666
     var temperatureNight: Int = 666
     var precipitationPerDay: Boolean = false
 
-    fun  printWeather() {
+    fun printWeather() {
         println("Температура днем: $temperatureDay, Температура ночью: $temperatureNight, Наличие осадков: $precipitationPerDay")
     }
 }
-
-/*
-Создай два объекта, присвой им произвольные данные и выведи в консоль одним методом созданного класса.
-
-- в классе создай переменные и проинициализируй их какими-нибудь значениями;
-- затем в созданных объектах подставь другие значения этим переменным.
- */
