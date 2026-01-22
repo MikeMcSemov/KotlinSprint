@@ -1,10 +1,10 @@
 package org.example.lesson_12
 
-fun main(){
+fun main() {
     val weatherOneDayNewNewNew = WeatherOneDayNewNewNew(300, 290)
 }
 
-class WeatherOneDayNewNewNew(temperatureDay: Int, temperatureNight: Int,) {
+class WeatherOneDayNewNewNew(temperatureDay: Int, temperatureNight: Int) {
 
     var precipitationPerDay: Boolean = false
 
