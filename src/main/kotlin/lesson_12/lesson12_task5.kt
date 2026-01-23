@@ -4,15 +4,16 @@ import kotlin.random.Random
 
 fun main() {
     val rangeTemperatureForDay = 1..35
-    val mutableListWeatherForMonth = mutableListOf <WeatherForMonth> ()
-
-    for (i in 1..30) {
-        mutableListWeatherForMonth.add(WeatherForMonth(rangeTemperatureForDay.random(), rangeTemperatureForDay.random(), Random.nextBoolean()))
+    val listWeatherForMonth = List(30) {
+        WeatherForMonth(
+            rangeTemperatureForDay.random(), rangeTemperatureForDay.random(),
+            Random.nextBoolean()
+        )
     }
 
-    println("Количество дней с осадками: ${mutableListWeatherForMonth.filter { it.precipitationPerDay }.size}")
-    println("Среднее значение дневных температур: ${mutableListWeatherForMonth.map { it.temperatureOfDay }.average()}")
-    println("Среднее значение ночных температур: ${mutableListWeatherForMonth.map { it.temperatureOfNight }.average()}")
+    println("Количество дней с осадками: ${listWeatherForMonth.filter { it.precipitationPerDay }.size}")
+    println("Среднее значение дневных температур: ${listWeatherForMonth.map { it.temperatureOfDay }.average()}")
+    println("Среднее значение ночных температур: ${listWeatherForMonth.map { it.temperatureOfNight }.average()}")
 }
 
 class WeatherForMonth(
