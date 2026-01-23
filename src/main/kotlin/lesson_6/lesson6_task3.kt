@@ -1,6 +1,6 @@
 package org.example.lesson_6
 
-const val COEF_FROM_MSEC_IN_SEC = 1000
+const val COEF_FROM_MSEC_IN_SEC3 = 1000
 
 fun main() {
 
@@ -11,7 +11,7 @@ fun main() {
     while (counter <= numberOfSeconds && counter > 0) {
         println("Осталось секунд: $counter")
         counter--
-        Thread.sleep(COEF_FROM_MSEC_IN_SEC.toLong())
+        Thread.sleep(COEF_FROM_MSEC_IN_SEC3.toLong())
     }
 
     println("Время вышло")
