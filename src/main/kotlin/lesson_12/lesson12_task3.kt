@@ -10,11 +10,18 @@ class WeatherOneDayNewNew(
     kelvinDayTemperature: Int,
     kelvinNightTemperature: Int,
 ) {
-    val kelvinDayTemperature = kelvinDayTemperature
-    val kelvinNightTemperature = kelvinNightTemperature
+    private val kelvinToCelsiusOffset = 273.15
+    val dayTemperature = kelvinDayTemperature - kelvinToCelsiusOffset
+    val nightTemperature = kelvinNightTemperature - kelvinToCelsiusOffset
     val precipitationPerDay: Boolean = false
 
     fun printWeather() {
-        println("Температура днем: ${(kelvinDayTemperature - 273.15).toInt()}, Температура ночью: ${(kelvinNightTemperature - 273.15).toInt()}, Наличие осадков: $precipitationPerDay")
+        println(
+            """
+            Температура днем: ${dayTemperature.toInt()}
+            Температура ночью: ${nightTemperature.toInt()}
+            Наличие осадков: $precipitationPerDay
+        """.trimIndent()
+        )
     }
 }
