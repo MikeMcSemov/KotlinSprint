@@ -10,9 +10,9 @@ fun main() {
     )
 
     println("Список уникальных компаний:")
-    listPhoneDirectory.forEach {
-        if (it.company != null) {
-        println(it.company)} }
+
+    listPhoneDirectory.mapNotNull { if (it.company != null) println(it.company) }
+
 }
 
 class PhoneDirectoryV2(
