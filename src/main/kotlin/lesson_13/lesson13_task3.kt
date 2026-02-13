@@ -11,11 +11,12 @@ fun main() {
 
     println("Список уникальных компаний:")
 
-    listPhoneDirectory.mapNotNull { if (it.company != null) println(it.company) }
+    val listCompany = listPhoneDirectory.map { it.company }.filterNotNull().distinct()
+    listCompany.forEach {println(it)}
 
 }
 
-class PhoneDirectoryV2(
+data class PhoneDirectoryV2(
     val name: String,
     val phoneNumber: Long,
     val company: String?,
