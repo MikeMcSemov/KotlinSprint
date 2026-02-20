@@ -3,46 +3,60 @@ package org.example.lesson_14
 fun main() {
     val liner = ShipLinerN()
     liner.printShip()
-    liner.isChopIce()
+    liner.checkIceBreakingCapacity()
+    liner.load()
 
     println()
 
-    val cargo = CargoShipN("Грузовой", 40, 70)
+    val cargo = CargoShipN()
     cargo.printShip()
-    cargo.isChopIce()
+    cargo.checkIceBreakingCapacity()
+    cargo.load()
 
     println()
 
-    val iceDrift = IceDriftN("Ледоход", 30, 30)
+    val iceDrift = IceDriftN()
     iceDrift.printShip()
-    iceDrift.isChopIce()
+    iceDrift.checkIceBreakingCapacity()
+    iceDrift.load()
 }
 
 open class ShipLinerN(
-    val nameShip: String = "Лайнер",
-    val speed: Int = 60,
-    val liftingCapacity: Int = 100,
-    val chopIce: Boolean = false,
-    val loadMethode: String = "Выдвигает горизонтальный трап со шкафута.",
+    open val nameShip: String = "Лайнер",
+    open val speed: Int = 60,
+    open val liftingCapacity: Int = 100,
+    open val chopIce: Boolean = false,
 ) {
     fun printShip() {
-        println("Тип корабля: $nameShip, Скорость: $speed км/ч, Вместительность: $liftingCapacity человек, $loadMethode")
+        println("Тип корабля: $nameShip, Скорость: $speed км/ч, Вместительность: $liftingCapacity человек")
     }
 
-    fun isChopIce() {
-        if (chopIce) {println("$nameShip может колоть лёд")}
-        else println("$nameShip не может колоть лёд")
+    fun checkIceBreakingCapacity() {
+        if (chopIce) {
+            println("$nameShip может колоть лёд")
+        } else println("$nameShip не может колоть лёд")
+    }
+    open fun load() {
+        println("Выдвигает горизонтальный трап со шкафута.")
     }
 }
 
 class CargoShipN(
-    nameShip: String,
-    speed: Int,
-    liftingCapacity: Int,
-) : ShipLinerN(nameShip, speed, liftingCapacity, false, "Активирует погрузочный кран.")
+    override val nameShip: String = "Грузовой",
+    override val speed: Int = 40,
+    override val liftingCapacity: Int = 70,
+) : ShipLinerN(nameShip, speed, liftingCapacity, false) {
+    override fun load() {
+        println("Активирует погрузочный кран.")
+    }
+}
 
 class IceDriftN(
-    nameShip: String,
-    speed: Int,
-    liftingCapacity: Int,
-) : ShipLinerN(nameShip, speed, liftingCapacity, true, "Открывает ворота со стороны кормы.")
+    override val nameShip: String = "Ледоход",
+    override val speed: Int = 30,
+    override val liftingCapacity: Int = 30,
+) : ShipLinerN(nameShip, speed, liftingCapacity, true) {
+    override fun load() {
+        println("Открывает ворота со стороны кормы.")
+    }
+}
