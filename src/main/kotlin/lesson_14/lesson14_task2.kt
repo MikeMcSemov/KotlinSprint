@@ -36,6 +36,7 @@ open class ShipLinerN(
             println("$nameShip может колоть лёд")
         } else println("$nameShip не может колоть лёд")
     }
+
     open fun load() {
         println("Выдвигает горизонтальный трап со шкафута.")
     }
